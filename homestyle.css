@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
 body {
     background-color: #DDA15E;
 }
@@ -31,10 +36,85 @@ a, li, p, label {
 .aboutus {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 10% 2% 0 2%;
 }
-.homecat {
-    max-width: 50%;
-    padding: 0 1.5rem 0 1.5rem;
-    border-radius: 10%;
+.catcontainer {
+    display: flex;
+    flex-direction: row;
+}
+.catcontainer p {
+    font-size: 20px;
+}
+.catoftheday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+    width: 30%;
+    height: 80%;
+}
+#cotd {
+    width: 18rem;
+    height: 18rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#cotd img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#catbutton {
+    background-color: #BC6C25;
+    color: #fff;
+    width: 75%;
+    border-radius: 12px;
+}
+.cardcontainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+.card .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 2s ease-in-out;
+    transform: perspective(500px) rotateY(0deg);
+}
+.card .face.front {
+    background-color: #ff0;
+}
+.card:hover .face.front {
+    transform: perspective(500px) rotateY(0deg);
+}
+.card .face.back {
+    background-color: blue;
+    color: #fff;
+    transform: perspective(500px) rotateY(-180deg);
+}
+.card:hover .face.back {
+    transform: perspective(500px) rotateY(360deg);
+}
+.card .face h2 {
+    font-size: 4em;
+    text-transform: uppercase;
+    transform: perspective(500ox) translateZ(50px);
 }

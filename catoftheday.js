@@ -1,1 +1,11 @@
-headers["x-api-key"] = "80d1b59e-6918-456e-b9eb-3d1e7b78ac92"
+const cotd = document.getElementById("cotd");
+const catbutton = document.getElementById("catbutton");
+catbutton.addEventListener("click", getRandomCat)
+
+function getRandomCat() {
+    fetch("https://aws.random.cat/meow")
+    .then(res => res.json())
+    .then(data => {
+        cotd.innerHTML = `<img src="${data.file}"/>`
+    })
+}
