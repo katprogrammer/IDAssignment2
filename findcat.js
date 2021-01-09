@@ -44,7 +44,7 @@ function createMap() {
             };
             infowindow.setPosition(position);
             infowindow.setContent('Your Location!');
-            infowindow.open(map);s
+            infowindow.open(map);
         }, function() {
             handleLocationError('Geolocation failed', map.center());
         })
@@ -62,5 +62,12 @@ function handleLocationError(content, position) {
     infowindow.open(map);
 }
 
-
+fetch('https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyBxGAmA9RjWRufMiJsU3QFk6Tmss0P9Ie4', {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'no-cors',
+    headers: {
+        'content-type': 'application/json; charset=utf-8'
+    },
+  }).then(response => response.json())
+  .then(response => console.log(response))
   
